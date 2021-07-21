@@ -1,0 +1,46 @@
+description = "Default layout" 
+==
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8" />
+        <title>{{this.page.title}}</title>
+        <meta name="description" content="" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, maximum-scale=1"
+        />
+        <meta property="og:image" content="path/to/image.jpg" />
+        <meta name="theme-color" content="#000" />
+        <link rel="icon" href="{{'/assets/img/favicon/favicon.ico|theme'}}" />
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="img/favicon/apple-touch-icon-180x180.png"
+        />
+        
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css" />
+        <link rel="stylesheet" href="{{ '/assets/css/main.min.css' | theme }}" />
+        <link rel="stylesheet" href="{{ '/assets/css/styles.css' | theme }}" />
+        {%styles%}
+    </head>
+    <body>
+        {% partial 'header' %}
+
+        <div class="main-content">
+            {% page %}
+        </div>
+
+        {% partial 'footer' %}
+        {% partial 'loader' %}
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="{{ '/assets/js/app.min.js' | theme}}"></script>
+        
+        <script src="{{ '/assets/js/slick.min.js' | theme}}"></script>
+        {% framework extras %} 
+        {% scripts %}
+    </body>
+</html>

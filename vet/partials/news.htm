@@ -1,0 +1,45 @@
+[blogPosts]
+pageNumber = "{{ :page }}"
+categoryFilter = "news"
+postsPerPage = 4
+noPostsMessage = "Записей не найдено"
+sortOrder = "published_at desc"
+categoryPage = "home"
+postPage = "post"
+==
+{% set posts = blogPosts.posts %}
+
+<section class="main-content__last-news__block">
+  <div class="container">
+    <div class="last-news__block-header">
+      <div class="last-news__block-header__title">Последние новости</div>
+      <div class="last-news__block-header__allnews"><a href="#">Все новости</a></div>
+    </div>
+    <div class="last-news__block-content">
+      {% for post in posts %}
+        {% if post.featured_images|slice(0, 1) %}
+          {% for image in post.featured_images|slice(0, 1) %}
+            <div class="news-item" style="background-image: url({{image.path}});">
+          {% endfor %}
+          {% else %}
+          <div class="news-item">
+        {% endif %}
+        <div class="news-item__date">{{post.published_at|date}}</div>
+        <div class="news-item__content">
+          <div class="news-item__content-title">{{ post.title }}</div>
+          <div class="news-item__content-body">
+            {% if post.excerpt %}
+              <a href="{{ post.url }}">
+                {{ post.excerpt }}
+              </a>
+              {% else %}
+              <a href="{{ post.url }}">Читать...</a>
+            {% endif%}
+          </div>
+        </div>
+        <div class="overlay"></div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

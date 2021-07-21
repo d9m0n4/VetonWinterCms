@@ -1,0 +1,40 @@
+title = "home"
+url = "/"
+layout = "default"
+==
+
+  <section class="main-content__slider">
+    <div class="container">
+      <div class="slider">
+        <div class="slider__item">
+          <img class="img-responsive center" src="{{'/assets/img/Slider/slide-1.jpg' | theme}}" alt="" />
+          <div class="overlay"></div>
+          <div class="description">Лечение домашних животных</div>
+        </div>
+        <div class="slider__item">
+          <img class="img-responsive center" src="{{'/assets/img/Slider/slide-2.jpg' | theme}}" alt="" />
+          <div class="overlay"></div>
+          <div class="description">Лечение сельхоз животных</div>
+        </div>
+        <div class="slider__item">
+          <img class="img-responsive center" src="{{'/assets/img/Slider/slide-3.jpg' | theme}}" alt="" />
+          <div class="overlay"></div>
+          <div class="description">Лабораторные исследования</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  {% partial 'news' %}
+  <section class="main-content__map">
+    <div class="container">
+      <div class="address">г. Яранск пер. Радина 8А</div>
+    </div>
+    <iframe
+      src="https://yandex.ru/map-widget/v1/?um=constructor%3A00aab56c6614f8776a9639e16d592ac2b472d8b784900868090810ef8cf02a6b&amp;source=constructor"
+      width="100%"
+      height="300"
+      frameborder="0"
+    ></iframe>
+  </section>
+
+
